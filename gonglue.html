@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>游戏攻略 · 魔法启示录</title>
+  <meta name="description" content="魔法启示录游戏攻略合集，微信公众号精选文章，方便玩家查阅。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0908;
+      --card: rgba(28, 22, 16, 0.92);
+      --gold: #d4a574;
+      --text: #ede4d3;
+      --muted: #8a7f72;
+      --line: rgba(212, 165, 116, 0.35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.55;
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse 100% 60% at 50% 0%, rgba(139, 40, 28, 0.18) 0%, transparent 55%),
+        linear-gradient(180deg, #140f0c 0%, var(--bg) 45%, #050403 100%);
+    }
+
+    .wrap {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 1rem 1rem 2.5rem;
+    }
+
+    .nav-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.88rem;
+    }
+
+    .nav-row a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-row a:hover { text-decoration: underline; }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-align: center;
+      margin-bottom: 0.35rem;
+      color: var(--gold);
+    }
+
+    .sub {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .tip {
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding: 0.75rem 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 1.25rem;
+      background: rgba(0, 0, 0, 0.35);
+      line-height: 1.65;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .link-card {
+      display: block;
+      padding: 0.95rem 1rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .link-card:hover,
+    .link-card:active {
+      border-color: rgba(212, 165, 116, 0.55);
+      background: rgba(38, 30, 22, 0.95);
+    }
+
+    .link-card strong {
+      display: block;
+      font-size: 0.98rem;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.04em;
+    }
+
+    .link-card span {
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.72rem;
+      color: #5c5348;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="nav-row" aria-label="页面导航">
+      <a href="index.html">← 下载首页</a>
+      <a href="fuli.html">礼包兑换码</a>
+    </nav>
+
+    <h1>游戏攻略</h1>
+    <p class="sub">魔法启示录 · 本站全文 + 公众号精选</p>
+
+    <p class="tip"><strong>本站全文</strong>无需跳转微信即可阅读；<strong>公众号链接</strong>建议在手机<strong>微信内</strong>打开更稳定，若浏览器提示环境验证，请按页面指引操作或复制链接到微信中打开。</p>
+
+    <p class="sub" style="margin-top:0.5rem;margin-bottom:0.5rem;">本站已排版（可直读）</p>
+    <div class="list" style="margin-bottom:1.5rem;">
+      <a class="link-card" href="tianshen.html" style="border-color: rgba(212, 165, 116, 0.5);">
+        <strong>天神套装全攻略（全文）</strong>
+        <span>来自《魔法启示录-传奇3》文档，无需跳转微信</span>
+      </a>
+    </div>
+
+    <p class="sub" style="margin-bottom:0.5rem;">微信公众号（外链）</p>
+    <div class="list">
+      <a class="link-card" href="https://mp.weixin.qq.com/s/b7Kp967BzqQO5C2_NbyWig" rel="noopener noreferrer" target="_blank">
+        <strong>核心攻略 · 主推篇</strong>
+        <span>点击查看微信公众号攻略正文</span>
+      </a>
+      <a class="link-card" href="https://mp.weixin.qq.com/s/OEAZs5EMlfu51rq2UgVcxg" rel="noopener noreferrer" target="_blank">
+        <strong>精选攻略 · 其一</strong>
+        <span>微信文章 · 新窗口打开</span>
+      </a>
+      <a class="link-card" href="https://mp.weixin.qq.com/s/Dz1H7i8cCkMXLO3t0pcCpg" rel="noopener noreferrer" target="_blank">
+        <strong>精选攻略 · 其二</strong>
+        <span>微信文章 · 新窗口打开</span>
+      </a>
+      <a class="link-card" href="https://mp.weixin.qq.com/s/i84am6r_Q6XNxOPNK2PlbQ" rel="noopener noreferrer" target="_blank">
+        <strong>精选攻略 · 其三</strong>
+        <span>微信文章 · 新窗口打开</span>
+      </a>
+      <a class="link-card" href="https://mp.weixin.qq.com/s/dCvafdTeAems3-3hmTsF6w" rel="noopener noreferrer" target="_blank">
+        <strong>精选攻略 · 其四</strong>
+        <span>微信文章 · 新窗口打开</span>
+      </a>
+      <a class="link-card" href="https://mp.weixin.qq.com/s/TFg49Z8xf4lGNm5MPtdQvg" rel="noopener noreferrer" target="_blank">
+        <strong>精选攻略 · 其五</strong>
+        <span>微信文章 · 新窗口打开</span>
+      </a>
+      <a class="link-card" href="https://mp.weixin.qq.com/s/UcJpqX41zJXAfG05OwLGPw" rel="noopener noreferrer" target="_blank">
+        <strong>精选攻略 · 其六</strong>
+        <span>微信文章 · 新窗口打开</span>
+      </a>
+      <a class="link-card" href="https://mp.weixin.qq.com/s/EV1wzKQx2nm95Gw3Tqd45Q" rel="noopener noreferrer" target="_blank">
+        <strong>精选攻略 · 其七</strong>
+        <span>微信文章 · 新窗口打开</span>
+      </a>
+    </div>
+
+    <footer>
+      <p>攻略内容以公众号原文为准；链接失效时请留意官方通知。</p>
+    </footer>
+  </div>
+</body>
+</html>

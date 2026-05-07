@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>礼包福利 · 魔法启示录</title>
+  <meta name="description" content="魔法启示录礼包兑换码：CQ666、CQ777、CQ888、CQ999、ZB888。游戏内兑换使用。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0908;
+      --card: rgba(28, 22, 16, 0.92);
+      --gold: #d4a574;
+      --gold-dim: #8a6a3a;
+      --text: #ede4d3;
+      --muted: #8a7f72;
+      --line: rgba(212, 165, 116, 0.35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse 100% 60% at 50% 0%, rgba(139, 40, 28, 0.18) 0%, transparent 55%),
+        linear-gradient(180deg, #140f0c 0%, var(--bg) 45%, #050403 100%);
+    }
+
+    .wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 1rem 1rem 2.5rem;
+    }
+
+    .nav-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.88rem;
+    }
+
+    .nav-row a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-row a:hover { text-decoration: underline; }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-align: center;
+      margin-bottom: 0.35rem;
+      color: var(--gold);
+    }
+
+    .sub {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .tip {
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding: 0.75rem 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 1.25rem;
+      background: rgba(0, 0, 0, 0.35);
+      line-height: 1.6;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .code {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      color: var(--gold);
+    }
+
+    .btn-copy {
+      flex-shrink: 0;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1a1008;
+      background: linear-gradient(180deg, #f0d8a8 0%, var(--gold) 55%, #9a7328 100%);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+
+    .btn-copy:active { transform: scale(0.98); }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.72rem;
+      color: #5c5348;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="nav-row" aria-label="页面导航">
+      <a href="index.html">← 下载首页</a>
+      <a href="gonglue.html">游戏攻略</a>
+    </nav>
+
+    <h1>礼包福利</h1>
+    <p class="sub">魔法启示录 · 兑换码一览</p>
+
+    <p class="tip">请在游戏内找到「礼包」或「兑换」入口，输入下方礼包码领取奖励。每个码通常仅限同一角色领取一次，具体规则以游戏内说明为准。</p>
+
+    <div class="list" id="gift-list">
+      <!-- 由脚本填充，便于日后增删 -->
+    </div>
+
+    <footer>
+      <p>礼包码不定期更新，请以官方公告为准。</p>
+    </footer>
+  </div>
+
+  <script>
+    var CODES = ["CQ666", "CQ777", "CQ888", "CQ999", "ZB888"];
+
+    function copyText(btn, text) {
+      function ok() {
+        var old = btn.textContent;
+        btn.textContent = "已复制";
+        btn.disabled = true;
+        setTimeout(function () {
+          btn.textContent = old;
+          btn.disabled = false;
+        }, 1600);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(ok).catch(function () {
+          fallbackCopy(text);
+          ok();
+        });
+      } else {
+        fallbackCopy(text);
+        ok();
+      }
+    }
+
+    function fallbackCopy(text) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    var list = document.getElementById("gift-list");
+    CODES.forEach(function (code) {
+      var row = document.createElement("div");
+      row.className = "row";
+      row.innerHTML =
+        '<span class="code">' + code + "</span>" +
+        '<button type="button" class="btn-copy" data-code="' + code + '">复制</button>';
+      row.querySelector(".btn-copy").addEventListener("click", function () {
+        copyText(this, code);
+      });
+      list.appendChild(row);
+    });
+  </script>
+</body>
+</html>
