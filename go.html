@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>正在开始下载…</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; text-align: center; padding: 2rem; background: #111; color: #bbb; }
+    a { color: #d4a574; }
+  </style>
+  <!--
+    业务说明（给投放/运维）：
+    · 玩家对外点的永远是本站路径「b」（例如 https://你的域名/go.html），便于自有域名传播。
+    · 结算与归因以「a」为准：下方链接必须是渠道/平台认可的完整安装包地址（含必备参数）。
+    · 本页只做一层跳转，浏览器最终会向「a」发起真实下载请求，不以用户可见栏是否为 b 作为结算依据；
+      具体统计口径请以渠道合同为准（有的看首次跳转，有的看最终 apk URL）。
+    · 若需在 b 上带追踪参数并一并给到 a：可用 https://你的域名/go.html?sub_id=xxx ，会自动合并进下方「a」（不覆盖 a 上已有的同名参数）。
+  -->
+</head>
+<body>
+  <p>正在跳转到官方安装包…</p>
+  <p style="font-size: 0.85rem; margin-top: 1rem;">若未自动开始，请<a id="manual" href="https://apps.bytesfield.com/download/extend/cur/c9324449e605c2d776673ec2df1def0bcac7ade7/cq3mfxxl46">手动下载</a>。</p>
+  <script>
+    (function () {
+      var a = document.getElementById("manual");
+      var url = new URL(a.href, window.location.href);
+      new URLSearchParams(window.location.search).forEach(function (value, key) {
+        if (!url.searchParams.has(key)) {
+          url.searchParams.append(key, value);
+        }
+      });
+      a.href = url.toString();
+      location.replace(url.toString());
+    })();
+  </script>
+</body>
+</html>
