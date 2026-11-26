@@ -71,5 +71,16 @@
       </div>
     </div>
   </div>
+  <script>
+    (function () {
+      var source = new URLSearchParams(location.search).get("src");
+      if (source !== "dxyx_launch" && source !== "qa") return;
+      document.querySelectorAll('a[href="go.html"]').forEach(function (link) {
+        var target = new URL(link.href);
+        target.searchParams.set("src", source);
+        link.href = target.toString();
+      });
+    })();
+  </script>
 </body>
 </html>
