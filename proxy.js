@@ -3,8 +3,8 @@ import { next, rewrite, waitUntil } from '@vercel/functions';
 
 const official = 'yszt.dxyx6888.com';
 const collector = 'https://hufu-admin.hnchpower.cn/cq-admin/index.php?s=/data/adanalyse/website_event';
-const currentApk = '/yszt-0.1.16.apk';
-const versionedApks = new Set([currentApk]);
+const currentApk = '/yszt-0.1.17.apk';
+const versionedApks = new Set(['/yszt-0.1.16.apk', currentApk]);
 
 export function trafficEvent(request, url) {
   if (url.hostname !== official || request.method !== 'GET') return null;
